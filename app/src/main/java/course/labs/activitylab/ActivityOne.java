@@ -21,28 +21,25 @@ public class ActivityOne extends Activity {
 	private final static String TAG = "Lab-ActivityOne";
 
 	// Lifecycle counters
+    private int mCreate;
+    private int mRestart;
+    private int mStart;
+    private int mResume;
 
-	// TODO:
-	// Create variables named
-	// mCreate, mRestart, mStart and mResume
-	// to count calls to onCreate(), onRestart(), onStart() and
-	// onResume(). These variables should not be defined as static.
-
-	// You will need to increment these variables' values when their
-	// corresponding lifecycle methods get called.
-
-	// TODO: Create variables for each of the TextViews
-	// named mTvCreate, mTvRestart, mTvStart, mTvResume.
-	// for displaying the current count of each counter variable
+    private TextView mTvCreate;
+    private TextView mTvRestart;
+    private TextView mTvStart;
+    private TextView mTvResume;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_one);
 
-		// TODO: Assign the appropriate TextViews to the TextView variables
-		// Hint: Access the TextView by calling Activity's findViewById()
-		// textView1 = (TextView) findViewById(R.id.textView1);
+        mTvCreate = (TextView) findViewById(R.id.create);
+        mTvRestart = (TextView) findViewById(R.id.restart);
+        mTvStart = (TextView) findViewById(R.id.start);
+        mTvResume = (TextView) findViewById(R.id.resume);
 
 		Button launchActivityTwoButton = (Button) findViewById(R.id.bLaunchActivityTwo);
 		launchActivityTwoButton.setOnClickListener(new OnClickListener() {
@@ -74,8 +71,7 @@ public class ActivityOne extends Activity {
 		// Emit LogCat message
 		Log.i(TAG, "Entered the onCreate() method");
 
-		// TODO:
-		// Update the appropriate count variable
+        mCreate++;
 		// Update the user interface via the displayCounts() method
 
 	}
@@ -89,8 +85,7 @@ public class ActivityOne extends Activity {
 		// Emit LogCat message
 		Log.i(TAG, "Entered the onStart() method");
 
-		// TODO:
-		// Update the appropriate count variable
+        mStart++;
 		// Update the user interface
 
 	}
@@ -102,8 +97,7 @@ public class ActivityOne extends Activity {
 		// Emit LogCat message
 		Log.i(TAG, "Entered the onResume() method");
 
-		// TODO:
-		// Update the appropriate count variable
+        mResume++;
 		// Update the user interface
 
 	}
@@ -131,8 +125,7 @@ public class ActivityOne extends Activity {
 		// Emit LogCat message
 		Log.i(TAG, "Entered the onRestart() method");
 
-		// TODO:
-		// Update the appropriate count variable
+        mRestart++;
 		// Update the user interface
 
 	}
