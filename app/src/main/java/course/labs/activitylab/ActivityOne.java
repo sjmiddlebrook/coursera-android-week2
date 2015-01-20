@@ -73,6 +73,7 @@ public class ActivityOne extends Activity {
 
         mCreate++;
 		// Update the user interface via the displayCounts() method
+        displayCounts();
 
 	}
 
@@ -87,7 +88,7 @@ public class ActivityOne extends Activity {
 
         mStart++;
 		// Update the user interface
-
+        displayCounts();
 	}
 
 	@Override
@@ -99,6 +100,7 @@ public class ActivityOne extends Activity {
 
         mResume++;
 		// Update the user interface
+        displayCounts();
 
 	}
 
@@ -127,7 +129,7 @@ public class ActivityOne extends Activity {
 
         mRestart++;
 		// Update the user interface
-
+        displayCounts();
 	}
 
 	@Override

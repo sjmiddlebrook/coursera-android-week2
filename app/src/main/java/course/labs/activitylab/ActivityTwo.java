@@ -19,37 +19,26 @@ public class ActivityTwo extends Activity {
 	// String for LogCat documentation
 	private final static String TAG = "Lab-ActivityTwo";
 
-	// Lifecycle counters
+    // Lifecycle counters
+    private int mCreate;
+    private int mRestart;
+    private int mStart;
+    private int mResume;
 
-	// TODO:
-	// Create variables named 	
-	// mCreate, mRestart, mStart and mResume 	
-	// to count calls to onCreate(), onRestart(), onStart() and
-	// onResume(). These variables should not be defined as static.
-	
-	// You will need to increment these variables' values when their
-	// corresponding lifecycle methods get called.
-	
-
-	
-	
-	// TODO: Create variables for each of the TextViews
-	// named  mTvCreate, mTvRestart, mTvStart, mTvResume.
-	// for displaying the current count of each counter variable
+    private TextView mTvCreate;
+    private TextView mTvRestart;
+    private TextView mTvStart;
+    private TextView mTvResume;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_two);
 
-		// TODO: Assign the appropriate TextViews to the TextView variables
-		// Hint: Access the TextView by calling Activity's findViewById()
-		// textView1 = (TextView) findViewById(R.id.textView1);
-
-
-		
-		
-		
+        mTvCreate = (TextView) findViewById(R.id.create);
+        mTvRestart = (TextView) findViewById(R.id.restart);
+        mTvStart = (TextView) findViewById(R.id.start);
+        mTvResume = (TextView) findViewById(R.id.resume);
 		
 		Button closeButton = (Button) findViewById(R.id.bClose); 
 		closeButton.setOnClickListener(new OnClickListener() {
@@ -85,9 +74,9 @@ public class ActivityTwo extends Activity {
 
 		// TODO:
 		// Update the appropriate count variable
+        mCreate++;
 		// Update the user interface via the displayCounts() method
-
-
+        displayCounts();
 		
 		
 	}
@@ -103,11 +92,11 @@ public class ActivityTwo extends Activity {
 
 		// TODO:
 		// Update the appropriate count variable
+        mStart++;
 		// Update the user interface
+        displayCounts();
 
 
-		
-		
 	}
 
 	@Override
@@ -119,10 +108,10 @@ public class ActivityTwo extends Activity {
 
 		// TODO:
 		// Update the appropriate count variable
+		mResume++;
 		// Update the user interface
+        displayCounts();
 
-
-	
 	}
 
 	@Override
@@ -150,10 +139,9 @@ public class ActivityTwo extends Activity {
 
 		// TODO:
 		// Update the appropriate count variable
+		mRestart++;
 		// Update the user interface
-
-
-	
+        displayCounts();
 	
 	}
 
